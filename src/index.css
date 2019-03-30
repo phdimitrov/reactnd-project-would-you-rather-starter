@@ -10,8 +10,29 @@ a {
     color: #222222;
 }
 
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px;
+}
+
+.avatar {
+    height: 50px;
+    border-radius: 25px;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.signin li {
+    background-color: #F5F5DC;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
 }

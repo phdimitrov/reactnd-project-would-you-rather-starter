@@ -3,7 +3,9 @@ import {handleInitialData} from "../actions/shared";
 import {connect} from 'react-redux'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import LoadingBar from 'react-redux-loading';
+import { isEmptyObject } from '../utils/helper'
 import SignIn from './SignIn';
+import Home from './Home';
 
 class App extends Component {
     componentDidMount() {
@@ -16,7 +18,12 @@ class App extends Component {
                 <Fragment>
                     <LoadingBar/>
                     <div className='container'>
-                        <Route path='/' exact component={SignIn}/>
+                        {this.props.loading === true
+                            ? <div>Loading...</div>
+                            : <div>
+                                <Route path='/' exact component={SignIn}/>
+                                <Route path='/home' component={Home}/>
+                            </div>}
                     </div>
                 </Fragment>
             </Router>
@@ -24,4 +31,10 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+function mapStateToProps({ users }) {
+    return {
+        loading: isEmptyObject(users)
+    }
+}
+
+export default connect(mapStateToProps)(App);

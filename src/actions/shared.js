@@ -1,19 +1,25 @@
-import { getInitialData } from '../utils/api';
+import { getUsers, getQuestions } from '../utils/api';
 import { receiveUsers } from '../actions/users';
 import { receiveQuestions } from '../actions/questions';
-import { setAuthedUser } from '../actions/authedUser';
 import { showLoading, hideLoading } from 'react-redux-loading';
-
-const AUTHED_ID = 'tylermcginnis';
 
 export function handleInitialData () {
     return (dispatch) => {
         dispatch(showLoading());
-        return getInitialData()
-            .then(({ users, questions }) => {
+        return getUsers()
+            .then(({ users }) => {
                 dispatch(receiveUsers(users));
+                dispatch(hideLoading());
+            })
+    }
+}
+
+export function handleHomeData () {
+    return (dispatch) => {
+        dispatch(showLoading());
+        return getQuestions()
+            .then(({ questions }) => {
                 dispatch(receiveQuestions(questions));
-                dispatch(setAuthedUser(AUTHED_ID));
                 dispatch(hideLoading());
             })
     }
