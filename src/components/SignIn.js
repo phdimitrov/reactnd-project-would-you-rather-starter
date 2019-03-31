@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
-import { FaQuestion } from 'react-icons/fa/index';
 import User from './User'
 import { setAuthedUser } from '../actions/authedUser'
 
@@ -17,9 +16,8 @@ class SignIn extends Component {
     render() {
         const { users } = this.props;
         return (
-            <div className='signin'>
+            <div className='container signin'>
                 <h3>Select user to sign in</h3>
-                <FaQuestion />
                 <ul>
                     {Object.values(users).map((user) => (
                         <li key={user.id} onClick={() => this.handleSignIn(user)}>
