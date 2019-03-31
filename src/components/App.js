@@ -18,7 +18,7 @@ class App extends Component {
                 <Fragment>
                     <LoadingBar/>
 
-                        {this.props.loading === true
+                        {this.props.loading
                             ? <div>Loading...</div>
                             : <div>
                                 <Route path='/' exact component={SignIn}/>

@@ -8,7 +8,7 @@ class User extends Component {
         const {avatarURL, name} = this.props.user;
 
         return (
-            <div>
+            <div className='user'>
                 <img
                     src={avatarURL}
                     alt={`Avatar of ${name}`}

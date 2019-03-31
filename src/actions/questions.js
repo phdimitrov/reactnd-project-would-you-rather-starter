@@ -17,6 +17,7 @@ export function saveQuestion (question) {
 }
 
 export function saveQuestionAnswer (object) {
+    console.log("aaaaa", object);
     return {
         type: SAVE_QUESTION_ANSWER,
         object

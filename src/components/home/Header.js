@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import connect from "react-redux/es/connect/connect";
-import {Redirect} from 'react-router-dom'
 import {FaSignOutAlt} from 'react-icons/fa/index';
 import User from "../common/User";
 import Nav from "./Nav";
-import {handleHomeData} from "../../actions/shared";
 import {logoutAuthedUser} from "../../actions/authedUser";
 
 class Header extends Component {
@@ -15,11 +13,7 @@ class Header extends Component {
     };
 
     render() {
-        const {isAuthenticated, user} = this.props;
-        if (!isAuthenticated) {
-            return <Redirect to='/'/>
-        }
-
+        const { user } = this.props;
         return (
             <div className='header'>
                 <Nav/>
@@ -34,7 +28,6 @@ class Header extends Component {
 
 function mapStateToProps({authedUser, users}) {
     return {
-        isAuthenticated: authedUser !== null,
         user: users[authedUser]
     }
 }

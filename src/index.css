@@ -35,7 +35,7 @@ li {
 }
 
 .signin li {
-    background-color: #F5F5DC;
+    background-color: #ccc;
     border-radius: 5px;
     margin: 5px;
     cursor: pointer;
@@ -73,5 +73,92 @@ li {
 
 .header .logout {
     padding: 5px;
+}
+
+.questions h4 {
+    text-align: center;
+}
+
+.questions .unanswered-list {
+
+}
+
+.question-info {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.question-info form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-info button {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.question-info .avatar {
+    height: 18px;
+    border-radius: 9px;
+}
+
+.question-info .user span {
+    font-size: 12px;
+}
+
+.question-info .asks {
+    margin: 5px 5px 0 5px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.question-info .option {
+    padding: 5px;
+    position: relative;
+    margin: 5px;
+}
+
+.question-info .option.unanswered {
+    font-size: 12px;
+}
+
+.question-info .option.answered {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.question-info .option.answered div:first-child {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.question-info .option.answered div:nth-child(2) {
+    font-size: 8px;
+    font-style: italic;
+}
+
+.question-info .option.author-answer {
+    border: 1px solid #00CC00;
+    border-radius: 5px;
+    position: relative;
+}
+.question-info .option.author-answer:before {
+    content: "Your answer";
+    display: block;
+    position: absolute;
+    font-size: 10px;
+    background-color: #00CC00;
+    border-radius: 2px;
+    padding: 2px;
+    right: -1px;
+    top: -6px;
 }
 
