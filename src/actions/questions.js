@@ -16,10 +16,11 @@ export function saveQuestion (question) {
     }
 }
 
-export function saveQuestionAnswer (object) {
-    console.log("aaaaa", object);
+export function saveQuestionAnswer ({authedUser, qid, answer}) {
     return {
         type: SAVE_QUESTION_ANSWER,
-        object
+        authedUser,
+        qid,
+        answer
     }
 }

@@ -2,6 +2,7 @@ import {getUsers, getQuestions, setQuestionAnswer} from '../utils/api';
 import {receiveUsers} from '../actions/users';
 import {receiveQuestions, saveQuestionAnswer} from '../actions/questions';
 import {showLoading, hideLoading} from 'react-redux-loading';
+import {saveUserQuestionAnswer} from "./users";
 
 export function handleInitialData() {
     return (dispatch) => {
@@ -31,6 +32,7 @@ export function handleAnswerQuestion(authedUser, qid, answer) {
         return setQuestionAnswer({authedUser, qid, answer})
             .then(() => {
                 dispatch(saveQuestionAnswer({authedUser, qid, answer}));
+                dispatch(saveUserQuestionAnswer({authedUser, qid, answer}));
                 dispatch(hideLoading());
             })
     }
