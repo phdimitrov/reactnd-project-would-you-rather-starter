@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
-import User from './User'
+import User from './common/User'
 import { setAuthedUser } from '../actions/authedUser'
 
 class SignIn extends Component {
