@@ -19,7 +19,7 @@ export function getQuestions() {
         }))
 }
 
-export function setQuestion(info) {
+export function saveNewQuestion(info) {
     return _saveQuestion(info)
 }
 

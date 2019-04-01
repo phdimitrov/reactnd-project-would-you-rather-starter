@@ -124,10 +124,28 @@ li {
     font-style: italic;
 }
 
+.question-info .or-separator {
+    margin: 0px 5px;
+}
+
 .question-info .option {
     padding: 5px;
     position: relative;
     margin: 5px;
+}
+
+.question-info .option.new-answer {
+    padding: 0;
+}
+
+.question-info .option.new-answer input {
+    width: 100%;
+}
+
+.question-info .option.new-answer .option-length {
+    text-align: right;
+    font-size: 10px;
+    color: red;
 }
 
 .question-info .option.unanswered {

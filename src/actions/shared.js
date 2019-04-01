@@ -1,6 +1,6 @@
-import {getUsers, getQuestions, setQuestionAnswer} from '../utils/api';
-import {receiveUsers} from '../actions/users';
-import {receiveQuestions, saveQuestionAnswer} from '../actions/questions';
+import {getUsers, getQuestions, setQuestionAnswer, saveNewQuestion} from '../utils/api';
+import {receiveUsers, saveUserQuestion} from '../actions/users';
+import {receiveQuestions, saveQuestion, saveQuestionAnswer} from '../actions/questions';
 import {showLoading, hideLoading} from 'react-redux-loading';
 import {saveUserQuestionAnswer} from "./users";
 
@@ -33,6 +33,23 @@ export function handleAnswerQuestion(authedUser, qid, answer) {
             .then(() => {
                 dispatch(saveQuestionAnswer({authedUser, qid, answer}));
                 dispatch(saveUserQuestionAnswer({authedUser, qid, answer}));
+                dispatch(hideLoading());
+            })
+    }
+}
+
+export function handleSaveQuestion (authedUser, optionOneText, optionTwoText) {
+    return (dispatch) => {
+        dispatch(showLoading());
+
+        return saveNewQuestion({
+            optionOneText,
+            optionTwoText,
+            author: authedUser,
+        })
+            .then((question) => {
+                dispatch(saveQuestion(question));
+                dispatch(saveUserQuestion(question));
                 dispatch(hideLoading());
             })
     }
