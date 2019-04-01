@@ -190,3 +190,20 @@ li {
     top: -6px;
 }
 
+.user-info {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.user-info .score {
+    font-size: 14px;
+}
+
+.user-info .answered,
+.user-info .created {
+    font-size: 10px;
+}
