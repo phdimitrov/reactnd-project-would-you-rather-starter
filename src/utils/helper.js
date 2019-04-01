@@ -6,7 +6,7 @@ export function formatQuestion (question, author, authedUser) {
     const { id, optionOne, optionTwo } = question;
 
     const totalVotes = optionOne.votes.length + optionTwo.votes.length;
-    const optionOnePercentage = totalVotes === 0 ? 0 : (optionOne.votes.length * 100) / totalVotes;
+    const optionOnePercentage = (totalVotes === 0 ? 0 : (optionOne.votes.length * 100) / totalVotes).toFixed(0);
     const optionTwoPercentage = 100 - optionOnePercentage;
 
     return {

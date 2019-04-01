@@ -21,8 +21,8 @@ class Question extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const { selectedOption } = this.state;
-        const { dispatch, id, authedUser } = this.props;
+        const {selectedOption} = this.state;
+        const {dispatch, id, authedUser} = this.props;
 
         console.log("selected ", selectedOption);
 
@@ -40,7 +40,7 @@ class Question extends Component {
             return <p>No such question</p>
         }
 
-        const { selectedOption } = this.state
+        const {selectedOption} = this.state
 
         const {optionOne, optionTwo, totalVotes, author} = question;
         const hasAnswered = optionOne.hasAnswered || optionTwo.hasAnswered;
@@ -67,7 +67,8 @@ class Question extends Component {
                             <div className='option unanswered'>
                                 <input type="radio" name="options" value="optionOne" onChange={this.handleChange}/>
                                 <label>{optionOne.text}</label>
-
+                            </div>
+                            <div className='option unanswered'>
                                 <input type="radio" name="options" value="optionTwo" onChange={this.handleChange}/>
                                 <label>{optionTwo.text}</label>
                             </div>

@@ -79,6 +79,11 @@ li {
     text-align: center;
 }
 
+.questions .empty-list {
+    text-align: center;
+    font-style: italic;
+}
+
 .questions .unanswered-list {
 
 }
@@ -114,7 +119,7 @@ li {
 }
 
 .question-info .asks {
-    margin: 5px 5px 0 5px;
+    margin: 20px 5px 5px 5px;
     font-weight: bold;
     font-style: italic;
 }
@@ -127,6 +132,11 @@ li {
 
 .question-info .option.unanswered {
     font-size: 12px;
+    padding: 0;
+}
+
+.question-info .option.unanswered input {
+    vertical-align: text-bottom;
 }
 
 .question-info .option.answered {
