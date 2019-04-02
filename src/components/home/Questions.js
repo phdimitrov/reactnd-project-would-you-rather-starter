@@ -1,15 +1,44 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
-import Question from "../common/Question"
 import ListQuestions from "../common/ListQuestions";
 
 class Questions extends Component {
+    state = {
+        activeList: 'unanswered'
+    }
+
+    handleListChange = (e, listName) => {
+        e.preventDefault();
+        this.setState({
+            activeList: listName
+        });
+    };
+
     render() {
+
+        const {activeList} = this.state;
+
         return (
-            <div className='questions'>
-                <ListQuestions title='Unanswered' questionIds={this.props.questionUnasweredIds} />
-                <ListQuestions title='Answered' questionIds={this.props.questionsAnsweredIds} />
-            </div>
+            <Fragment>
+                <div className='questionsNav'>
+                    <button
+                        onClick={(e) => this.handleListChange(e, 'unanswered')}
+                        className={activeList === 'unanswered' ? 'active' : ''}>
+                        Unanswered
+                    </button>
+                    <button
+                        onClick={(e) => this.handleListChange(e, 'answered')}
+                        className={activeList === 'answered' ? 'active' : ''}>
+                        Answered
+                    </button>
+                </div>
+                <div className='questions'>
+                    {activeList === 'unanswered'
+                        ? <ListQuestions questionIds={this.props.questionUnasweredIds}/>
+                        : <ListQuestions questionIds={this.props.questionsAnsweredIds}/>
+                    }
+                </div>
+            </Fragment>
         );
     }
 }

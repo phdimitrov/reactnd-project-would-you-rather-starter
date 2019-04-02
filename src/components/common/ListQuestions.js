@@ -7,7 +7,7 @@ class ListQuestions extends Component {
         const { questionIds, title } = this.props;
         return (
             <Fragment>
-                <h4>{title}</h4>
+                {title !== '' && (<h4>{title}</h4>)}
                 {questionIds.length !== 0
                     ? (
                         <ul className='unanswered-list'>
