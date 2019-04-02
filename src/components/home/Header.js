@@ -18,7 +18,7 @@ class Header extends Component {
             <div className='header'>
                 <Nav/>
                 <div className='user-area'>
-                    <User user={user}/>
+                    <User user={user} showName={true} />
                     <FaSignOutAlt onClick={(e) => this.handleLogout(e)} className='logout'/>
                 </div>
             </div>

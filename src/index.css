@@ -71,6 +71,10 @@ li {
     vertical-align: middle;
 }
 
+.header .user-area .name {
+    font-size: 10px;
+}
+
 .header .logout {
     padding: 5px;
 }

@@ -5,7 +5,7 @@ import ListQuestions from "../common/ListQuestions";
 class Questions extends Component {
     state = {
         activeList: 'unanswered'
-    }
+    };
 
     handleListChange = (e, listName) => {
         e.preventDefault();

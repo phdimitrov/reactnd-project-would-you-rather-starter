@@ -14,7 +14,7 @@ class User extends Component {
                     alt={`Avatar of ${name}`}
                     className='avatar'
                 />
-                {showName && (<span>{name}</span>)}
+                {showName && (<span className='name'>{name}</span>)}
             </div>
         );
     }
