@@ -108,8 +108,21 @@ li {
     font-style: italic;
 }
 
-.questions .unanswered-list {
+.question-info .description {
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px;
+}
 
+.question-info .link {
+    font-size: 12px;
+    font-style: italic;
+    border: 1px solid black;
+    padding: 5px;
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .question-info {

@@ -5,6 +5,7 @@ import Header from "./home/Header";
 import Questions from "./home/Questions";
 import NewQuestion from "./home/NewQuestion";
 import Leaderboard from "./home/Leaderboard";
+import QuestionDetails from "./home/QuestionDetails";
 import {handleHomeData} from "../actions/shared";
 import {isEmptyObject} from "../utils/helper";
 
@@ -33,6 +34,7 @@ class Home extends Component {
                             <Route path='/home' exact component={Questions}/>
                             <Route path='/home/newQuestion' exact component={NewQuestion}/>
                             <Route path='/home/leaderboard' exact component={Leaderboard}/>
+                            <Route path='/home/questions/:question_id' component={QuestionDetails}/>
                         </div>
                     </Fragment>
                 )}
@@ -42,6 +44,7 @@ class Home extends Component {
 }
 
 function mapStateToProps({authedUser, users, questions}) {
+
     return {
         isAuthenticated: authedUser !== null,
         loading: isEmptyObject(questions),

@@ -40,7 +40,7 @@ class Question extends Component {
             return <p>No such question</p>
         }
 
-        const {selectedOption} = this.state
+        const {selectedOption} = this.state;
 
         const {optionOne, optionTwo, totalVotes, author} = question;
         const hasAnswered = optionOne.hasAnswered || optionTwo.hasAnswered;

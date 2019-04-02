@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 import {handleSaveQuestion} from "../../actions/shared";
 
 const MAX_LENGTH_OPTION = 50;

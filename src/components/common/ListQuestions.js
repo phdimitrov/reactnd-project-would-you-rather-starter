@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import Question from "./Question";
+import QuestionPreview from "./QuestionPreview";
 
 class ListQuestions extends Component {
 
@@ -10,10 +10,11 @@ class ListQuestions extends Component {
                 {title !== '' && (<h4>{title}</h4>)}
                 {questionIds.length !== 0
                     ? (
-                        <ul className='unanswered-list'>
+                        <ul className='questions-list'>
                             {this.props.questionIds.map((id) => (
                                 <li key={id}>
-                                    <Question id={id}/>
+
+                                    <QuestionPreview id={id}/>
                                 </li>
                             ))}
                         </ul>
