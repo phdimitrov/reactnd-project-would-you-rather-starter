@@ -34,7 +34,7 @@ class Questions extends Component {
                 </div>
                 <div className='questions'>
                     {activeList === 'unanswered'
-                        ? <ListQuestions questionIds={this.props.questionUnasweredIds}/>
+                        ? <ListQuestions questionIds={this.props.questionsUnasweredIds}/>
                         : <ListQuestions questionIds={this.props.questionsAnsweredIds}/>
                     }
                 </div>
@@ -53,7 +53,7 @@ function mapStateToProps({questions, authedUser}) {
         .map((q) => q.id);
 
     return {
-        questionUnasweredIds: questionsUnansweredIds.sort((a, b) => questions[b].timestamp - questions[a].timestamp),
+        questionsUnasweredIds: questionsUnansweredIds.sort((a, b) => questions[b].timestamp - questions[a].timestamp),
         questionsAnsweredIds: questionsAnsweredIds.sort((a, b) => questions[b].timestamp - questions[a].timestamp)
     }
 }

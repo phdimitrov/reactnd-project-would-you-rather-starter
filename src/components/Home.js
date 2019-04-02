@@ -32,7 +32,7 @@ class Home extends Component {
                         <Header/>
                         <div className='container home'>
                             <Route path='/home' exact component={Questions}/>
-                            <Route path='/home/newQuestion' exact component={NewQuestion}/>
+                            <Route path='/home/add' exact component={NewQuestion}/>
                             <Route path='/home/leaderboard' exact component={Leaderboard}/>
                             <Route path='/home/questions/:question_id' component={QuestionDetails}/>
                         </div>
