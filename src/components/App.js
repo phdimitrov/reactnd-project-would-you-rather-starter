@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {handleInitialData} from "../actions/shared";
 import {connect} from 'react-redux'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import LoadingBar from 'react-redux-loading';
 import { isEmptyObject } from '../utils/helper'
 import SignIn from './SignIn';
@@ -21,8 +21,11 @@ class App extends Component {
                         {this.props.loading
                             ? <div>Loading...</div>
                             : <div>
-                                <Route path='/' exact component={SignIn}/>
-                                <Route path='/home' component={Home}/>
+                                <Switch>
+                                    <Route path='/' exact component={SignIn}/>
+                                    <Route path='/home' component={Home}/>
+                                    <Route render={() => <div className='container'>404. Not found</div>}/>
+                                </Switch>
                             </div>}
 
                 </Fragment>

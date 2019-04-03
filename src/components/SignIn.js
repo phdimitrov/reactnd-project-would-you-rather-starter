@@ -10,7 +10,14 @@ class SignIn extends Component {
         const { dispatch } = this.props;
 
         dispatch(setAuthedUser(id));
-        this.props.history.push(`/home`);
+
+        if (this.props.location && this.props.location.state && this.props.location.state.referrer) {
+            const referrer = this.props.location.state.referrer;
+            this.props.history.push(referrer);
+        } else {
+            this.props.history.push(`/home`);
+        }
+
     };
 
     render() {

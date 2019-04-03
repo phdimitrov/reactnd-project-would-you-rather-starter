@@ -22,7 +22,11 @@ class Home extends Component {
     render() {
         const {isAuthenticated} = this.props;
         if (!isAuthenticated) {
-            return <Redirect to='/'/>
+            const currentLocation = this.props.location ? this.props.location.pathname: "/home";
+            return <Redirect to={{
+                pathname: "/",
+                state: {referrer: currentLocation}
+            }} />
         }
 
         return (
